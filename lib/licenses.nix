@@ -1255,16 +1255,26 @@ in mkLicense lset) ({
     fullName = "xfig";
     url = "https://mcj.sourceforge.net/authors.html#xfig";
   };
-
+  
   xinetd = {
     spdxId = "xinetd";
     fullName = "xinetd License";
   };
 
+  xskat = {
+    spdxId = "XSkat";
+    fullName = "XSkat License";
+  };
+ 
   zlib = {
     spdxId = "Zlib";
     fullName = "zlib License";
   };
+
+  zsh = {
+    url ="https://github.com/zsh-users/zsh/blob/master/LICENCE"; 
+    fullName ="Zsh License";
+  }; 
 
   zpl20 = {
     spdxId = "ZPL-2.0";
@@ -1275,11 +1285,7 @@ in mkLicense lset) ({
     spdxId = "ZPL-2.1";
     fullName = "Zope Public License 2.1";
   };
-
-  xskat = {
-    spdxId = "XSkat";
-    fullName = "XSkat License";
-  };
+ 
 } // {
   # TODO: remove legacy aliases
   apsl10 = {
