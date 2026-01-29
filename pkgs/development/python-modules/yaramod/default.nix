@@ -19,7 +19,7 @@ let
     hash = "sha256-El4WA92t2O/L4wUqH6Xj8w+ANtb6liRwafDhqn8jxjQ=";
   };
 in
-buildPythonPackage rec {
+buildPythonPackage (finalAttrs: {
   pname = "yaramod";
   version = "4.6.0";
   pyproject = true;
@@ -27,7 +27,7 @@ buildPythonPackage rec {
   src = fetchFromGitHub {
     owner = "avast";
     repo = "yaramod";
-    tag = "v${version}";
+    tag = "v${finalAttrs.version}";
     hash = "sha256-2XI7lGfoMHimtuQ29I1cFtV4OgfvR3Qcvh/FhA0yeBw=";
   };
 
@@ -67,8 +67,8 @@ buildPythonPackage rec {
   meta = {
     description = "Parsing of YARA rules into AST and building new rulesets in C++";
     homepage = "https://github.com/avast/yaramod";
-    changelog = "https://github.com/avast/yaramod/blob/${src.tag}/CHANGELOG.md";
+    changelog = "https://github.com/avast/yaramod/blob/${finalAttrs.src.tag}/CHANGELOG.md";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ msm ];
   };
-}
+})
