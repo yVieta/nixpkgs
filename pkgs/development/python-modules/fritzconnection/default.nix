@@ -8,7 +8,7 @@
   setuptools,
 }:
 
-buildPythonPackage rec {
+buildPythonPackage (finalAttrs: {
   pname = "fritzconnection";
   version = "1.15.1";
   pyproject = true;
@@ -16,7 +16,7 @@ buildPythonPackage rec {
   src = fetchFromGitHub {
     owner = "kbr";
     repo = "fritzconnection";
-    tag = version;
+    tag = finalAttrs.version;
     hash = "sha256-J07zAXZxQc3TCfsjYcBhQdxsYwHabE9vdj3eMkWua54=";
   };
 
@@ -44,11 +44,11 @@ buildPythonPackage rec {
   meta = {
     description = "Python module to communicate with the AVM Fritz!Box";
     homepage = "https://github.com/kbr/fritzconnection";
-    changelog = "https://fritzconnection.readthedocs.io/en/${version}/sources/version_history.html";
+    changelog = "https://fritzconnection.readthedocs.io/en/${finalAttrs.src.tag}/sources/version_history.html";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [
       dotlambda
       valodim
     ];
   };
-}
+})
