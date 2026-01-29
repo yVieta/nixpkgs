@@ -1070,6 +1070,7 @@ in
   };
 
   meta.maintainers = with lib.maintainers; [
+    adamcstephens
     Flakebi
     oddlama
   ];

@@ -17,6 +17,7 @@ in
 {
   name = "kanidm-${kanidmPackage.version}";
   meta.maintainers = with pkgs.lib.maintainers; [
+    adamcstephens
     Flakebi
     oddlama
   ];
