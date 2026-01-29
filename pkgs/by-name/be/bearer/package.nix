@@ -2,8 +2,7 @@
   lib,
   buildGoModule,
   fetchFromGitHub,
-  testers,
-  bearer,
+  versionCheckHook,
 }:
 
 buildGoModule (finalAttrs: {
@@ -21,18 +20,15 @@ buildGoModule (finalAttrs: {
 
   subPackages = [ "cmd/bearer" ];
 
+  nativeInstallCheckInputs = [ versionCheckHook ];
+
   ldflags = [
     "-s"
     "-w"
     "-X=github.com/bearer/bearer/cmd/bearer/build.Version=${finalAttrs.version}"
   ];
 
-  passthru.tests = {
-    version = testers.testVersion {
-      package = bearer;
-      command = "bearer version";
-    };
-  };
+  doInstallCheck = true;
 
   meta = {
     description = "Code security scanning tool (SAST) to discover, filter and prioritize security and privacy risks";
