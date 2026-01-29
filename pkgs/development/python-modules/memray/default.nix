@@ -19,7 +19,7 @@
   textual,
 }:
 
-buildPythonPackage rec {
+buildPythonPackage (finalAttrs: {
   pname = "memray";
   version = "1.19.1";
   pyproject = true;
@@ -27,7 +27,7 @@ buildPythonPackage rec {
   src = fetchFromGitHub {
     owner = "bloomberg";
     repo = "memray";
-    tag = "v${version}";
+    tag = "v${finalAttrs.version}";
     hash = "sha256-RdOtgNSkFIVl8Uve2iaJ7G0X1IHJ/Yo4h8hWP3pTV8g=";
   };
 
@@ -84,10 +84,10 @@ buildPythonPackage rec {
   meta = {
     description = "Memory profiler for Python";
     homepage = "https://bloomberg.github.io/memray/";
-    changelog = "https://github.com/bloomberg/memray/releases/tag/${src.tag}";
+    changelog = "https://github.com/bloomberg/memray/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [ fab ];
     platforms = lib.platforms.linux;
     mainProgram = "memray";
   };
-}
+})
