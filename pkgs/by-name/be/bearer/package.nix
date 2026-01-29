@@ -36,5 +36,6 @@ buildGoModule (finalAttrs: {
     changelog = "https://github.com/Bearer/bearer/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.elastic20;
     maintainers = with lib.maintainers; [ fab ];
+    mainProgram = "bearer";
   };
 })
