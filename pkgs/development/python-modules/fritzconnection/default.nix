@@ -6,6 +6,7 @@
   requests,
   segno,
   setuptools,
+  writableTmpDirAsHomeHook,
 }:
 
 buildPythonPackage (finalAttrs: {
@@ -28,11 +29,10 @@ buildPythonPackage (finalAttrs: {
     qr = [ segno ];
   };
 
-  nativeCheckInputs = [ pytestCheckHook ];
-
-  preCheck = ''
-    export HOME=$TEMP
-  '';
+  nativeCheckInputs = [
+    pytestCheckHook
+    writableTmpDirAsHomeHook
+  ];
 
   pythonImportsCheck = [ "fritzconnection" ];
 
