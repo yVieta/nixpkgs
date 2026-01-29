@@ -18,14 +18,14 @@
 
 buildPythonPackage rec {
   pname = "nibe";
-  version = "2.21.0";
+  version = "2.22.0";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "yozik04";
     repo = "nibe";
     tag = version;
-    hash = "sha256-I4Qgwdx5alkNso0FMz4wRWZffbDQm5VblmPdwtU/jXg=";
+    hash = "sha256-mbLasfHPPrZvL+PheMutqvIiyQQoew7dGIPGekuk0Oo=";
   };
 
   pythonRelaxDeps = [ "async-modbus" ];
