@@ -10,14 +10,14 @@
 
 buildPythonPackage rec {
   pname = "fritzconnection";
-  version = "1.15.0";
+  version = "1.15.1";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "kbr";
     repo = "fritzconnection";
     tag = version;
-    hash = "sha256-ulY+nh9CSnxrktTlFSXAWJALkS4GwP/3dRIG07jQCWs=";
+    hash = "sha256-J07zAXZxQc3TCfsjYcBhQdxsYwHabE9vdj3eMkWua54=";
   };
 
   build-system = [ setuptools ];
