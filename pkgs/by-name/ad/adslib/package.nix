@@ -2,6 +2,7 @@
   lib,
   stdenv,
   fetchFromGitHub,
+  unstableGitUpdater,
 }:
 
 stdenv.mkDerivation {
@@ -19,6 +20,8 @@ stdenv.mkDerivation {
     mkdir -p $out/lib
     cp adslib.so $out/lib/adslib.so
   '';
+
+  passthru.updateScript = unstableGitUpdater { };
 
   meta = {
     description = "Beckhoff protocol to communicate with TwinCAT devices";
