@@ -14,12 +14,12 @@
 
 buildPythonPackage rec {
   pname = "pysiaalarm";
-  version = "3.1.1";
+  version = "3.2.2";
   pyproject = true;
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-q42bsBeAwU9lt7wtYGFJv23UBND+aMXZJlSWyTfZDQE=";
+    hash = "sha256-9icZnEpSaezVj9EH5s1u2mB2h9jP/oZcpkVE0WFM4W8=";
   };
 
   postPatch = ''
