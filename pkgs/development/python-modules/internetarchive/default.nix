@@ -14,14 +14,14 @@
 
 buildPythonPackage rec {
   pname = "internetarchive";
-  version = "5.7.1";
+  version = "5.7.2";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "jjjake";
     repo = "internetarchive";
     tag = "v${version}";
-    hash = "sha256-SNzscVFFuvRyG976lWtktPobcIvfQgk4tAQ8+NXu4yw=";
+    hash = "sha256-eBTUKJs3j8LmQJSIBKAlDOjUglLHrjwtGx5O9Wn5C8Y=";
   };
 
   build-system = [ setuptools ];
