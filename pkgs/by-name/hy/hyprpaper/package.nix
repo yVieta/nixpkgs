@@ -32,6 +32,7 @@
   wayland,
   wayland-protocols,
   util-linux,
+  versionCheckHook,
 }:
 
 gcc15Stdenv.mkDerivation (finalAttrs: {
@@ -85,6 +86,9 @@ gcc15Stdenv.mkDerivation (finalAttrs: {
     wayland-protocols
     util-linux
   ];
+
+  doInstallCheck = true;
+  nativeInstallCheckInputs = [ versionCheckHook ];
 
   meta = {
     inherit (finalAttrs.src.meta) homepage;
