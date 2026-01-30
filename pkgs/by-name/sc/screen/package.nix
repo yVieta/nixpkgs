@@ -64,6 +64,12 @@ stdenv.mkDerivation (finalAttrs: {
     pam
   ];
 
+  outputs = [
+    "out"
+    "info"
+    "man"
+  ];
+
   meta = {
     homepage = "https://www.gnu.org/software/screen/";
     description = "Window manager that multiplexes a physical terminal";
